@@ -14,6 +14,7 @@ class Asteroid(CircleShape):
         self.position += (self.velocity * dt)
 
     def split(self):
+        self.kill()
         if self.radius <= ASTEROID_MIN_RADIUS: # smallest asteroid
             return
         else:
@@ -28,4 +29,4 @@ class Asteroid(CircleShape):
             new_asteroid_1.velocity = new_vect_1 * 1.2
             new_asteroid_2.velocity = new_vect_2 * 1.2
 
-        self.kill()
+        
